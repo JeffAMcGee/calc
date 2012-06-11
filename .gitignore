@@ -1,0 +1,15 @@
+.DS_Store
+*.swp
+
+build
+logs
+data
+presentation.html
+
+*.pyc
+*.db
+
+.coverage
+.ropeproject
+
+settings_local.py
