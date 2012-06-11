@@ -4,6 +4,7 @@ import operator
 OPS = {
     '+' : operator.add,
     '-' : operator.sub,
+    '*' : operator.mul,
 }
 
 
