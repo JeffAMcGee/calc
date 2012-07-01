@@ -8,19 +8,23 @@ OPS = {
 }
 
 
-def parse(line):
+def tokenize(line):
     return [ OPS.get(c) or int(c) for c in line]
 
 
+def eval_tokens(tkns):
+    if len(tkns)==1:
+        return tkns[0]
+    subexp,func,val = tkns[:-2],tkns[-2],tkns[-1]
+    return func(eval_tokens(subexp),val)
+
+
 def eval_exp(exp):
-    if len(exp)==1:
-        return exp[0]
-    subexp,func,val = exp[:-2],exp[-2],exp[-1]
-    return func(eval_exp(subexp),val)
+    return eval_tokens(tokenize(exp))
 
 
 def main():
-    exp = parse(raw_input('>').strip())
+    exp = raw_input('>').strip()
     print eval_exp(exp)
 
 
