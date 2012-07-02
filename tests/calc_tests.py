@@ -20,6 +20,10 @@ class TestCalc(unittest.TestCase):
         res2 = calc.eval_tokens([3,operator.sub,1,operator.add,2])
         self.assertEqual(res2,4)
 
+    def test_eval_exp(self):
+        res = calc.eval_exp("2*3+4")
+        self.assertEqual(res,10)
+
     def test_main(self):
         # Monkey patch raw_input and stdout using the mock library
         with patch('__builtin__.raw_input') as raw_inp:
