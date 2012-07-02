@@ -8,8 +8,8 @@ Overview
 
 - Why test?
 - Writing tests
-- Using nose
 - Using mock
+- Using nose
 - Tips
 
 ---
@@ -63,20 +63,6 @@ test_calc.py:
 
 ---
 
-nosetests
----------
-nose finds and runs tests for you
-
-    >pip install nose mock
-    >nosetests
-    .....
-    ----------------------------------------------------------------------
-    Ran 5 tests in 0.055s
-
-    OK
-
-Tip: `nosetests -s` will let you see print statements and use pdb
----
 
 mock
 ----
@@ -103,7 +89,7 @@ patch example
         print random.randint(10,20)
     print random.randint(10,20)
 
-------
+---
 
 mock example
 ------------
@@ -126,6 +112,22 @@ mock example
 
     with mock.patch('requests.get',fake_get):
         print function_to_test()
+
+---
+
+nosetests
+---------
+nose finds and runs tests for you
+
+    >pip install nose mock
+    >nosetests
+    .....
+    ----------------------------------------------------------------------
+    Ran 5 tests in 0.055s
+
+    OK
+
+Tip: `nosetests -s` will let you see print statements and use pdb
 
 ---
 
