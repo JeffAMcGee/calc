@@ -75,6 +75,7 @@ nose finds and runs tests for you
 
     OK
 
+Tip: `nosetests -s` will let you see print statements and use pdb
 ---
 
 mock
@@ -135,9 +136,10 @@ tips
 - When you don't know what to write, write the test backwards - you know what
   to assert
 - library code needs more tests
+- you can write the tests first
 - test as you go, don't go back and test legacy code
-- `nosetests -s` will let you see print statements and run pdb
 - mock external APIs like Twitter
+- put the tests for `base/models.py` in `base/tests/models_tests.py`.
 - be pragmatic - 100% coverage is not always something to strive for
 
 ---
